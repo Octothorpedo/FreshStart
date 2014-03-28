@@ -12,6 +12,7 @@ gem 'cancan'
 gem 'devise'
 gem 'figaro'
 gem 'pg'
+gem 'rails_12factor'
 gem 'rolify'
 gem 'simple_form'
 gem 'therubyracer', :platform=>:ruby
