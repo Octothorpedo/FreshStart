@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-FreshStart::Application.config.secret_key_base = 'af26f2140ea1fce3ef157aaf9da315edb8fbcbbe3e01c73456e560e3a1ef4743f90d4fe0ab5a7c24a921ea4edbd4bb226067bd2d53b854a8b5448d155e27057b'
+FreshStart::Application.config.secret_key_base = '5d4d4964cac9ee52185388c88ddb1da2b5b31835f429c576ae9e034d72ebfa5aa9449baaae74da18065b8712825677656e910ec91d5029bef05580c26f831d33'
