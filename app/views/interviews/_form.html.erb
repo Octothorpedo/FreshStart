@@ -1,0 +1,22 @@
+<%= simple_form_for @interview, html: {class: 'form-horizontal'} do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :description %>
+  	<%= f.simple_fields_for :debts do |d| %>
+  	  <%= d.input :name, label: 'Debt' %>
+  	  <%= d.input :original_balance, label: 'Original' %>
+  	  <%= d.input :current_balance, label: 'Current' %>
+  	  <%= d.input :interest_rate, label: 'Rate' %>
+  	  <%= d.input :months, label: 'Months' %>
+  	  <%= d.input :minimum_payment, label: 'Minimum Pay' %>
+  	  <%= d.input :date_last_payment, label: 'Last Paid On' %>
+  	  <%= d.input :frequency, label: 'Frequency' %>
+  	<% end %> 
+   </div></br>	 
+
+  <div class="form-actions">
+    <%= f.button :submit, 'Submit data' %>
+  </div></br>
+
+<% end %>

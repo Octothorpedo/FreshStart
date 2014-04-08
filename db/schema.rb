@@ -11,10 +11,60 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140328215133) do
+ActiveRecord::Schema.define(version: 20140408224623) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bills", force: true do |t|
+    t.string   "name"
+    t.decimal  "amount",            precision: 12, scale: 2
+    t.date     "date_last_payment"
+    t.string   "frequency"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "interview_id"
+  end
+
+  create_table "clients", force: true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "debts", force: true do |t|
+    t.string   "name"
+    t.decimal  "original_balance",  precision: 12, scale: 2
+    t.decimal  "current_balance",   precision: 12, scale: 2
+    t.decimal  "interest_rate"
+    t.integer  "months"
+    t.decimal  "minimum_payment",   precision: 12, scale: 2
+    t.date     "date_last_payment"
+    t.string   "frequency"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "interview_id"
+  end
+
+  create_table "incomes", force: true do |t|
+    t.string   "name"
+    t.decimal  "amount",            precision: 12, scale: 2
+    t.date     "date_last_payment"
+    t.string   "frequency"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "interview_id"
+  end
+
+  create_table "interviews", force: true do |t|
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "client_id"
+    t.integer  "user_id"
+  end
 
   create_table "roles", force: true do |t|
     t.string   "name"
